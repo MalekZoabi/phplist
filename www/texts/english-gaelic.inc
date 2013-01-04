@@ -2,7 +2,7 @@
 
 # language dependent text used in the interface for users (not admin)
 
-$strCharSet             = 'ISO-8859-1';
+$strCharSet             = 'UTF-8';
 $strName                = 'Name';
 $strAddress             = 'Address';
 $strEmail               = 'Email / Ebost';

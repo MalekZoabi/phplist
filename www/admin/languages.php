@@ -10,7 +10,8 @@ http://www.w3.org/International/O-charset-lang.html
 $LANGUAGES = array(
 "nl"=> array("Dutch ","iso-8859-1"," iso-8859-1, windows-1252 "),
 "de" => array("Deutsch ","iso-8859-1","iso-8859-1, windows-1252 "),
-"en" => array("English ","iso-8859-1","iso-8859-1, windows-1252 "),
+#"en" => array("English ","iso-8859-1","iso-8859-1, windows-1252 "),
+"en" => array("English ","utf-8","utf-8, windows-1255 "),
 "es"=>array("espa&ntilde;ol","iso-8859-1","iso-8859-1, windows-1252"),
 #"fa" => array('Persian','utf-8','utf-8'),
 "fr"=>array("fran&ccedil;ais ","iso-8859-1","iso-8859-1, windows-1252 "),
@@ -36,7 +37,7 @@ while ($lancode = readdir($d)) {
     if (!empty($lan['name']) && !empty($lan['charset'])) {
       $LANGUAGES[$lancode] = array($lan['name'],$lan['charset'],$lan['charset']);
     }
-    
+
 #    print '<br/>'.$landir.'/'.$lancode;
   }
 }
@@ -89,7 +90,7 @@ if (!isset($_SESSION['adminlanguage']) || !is_array($_SESSION['adminlanguage']))
   );
 }
 
-## this interferes with the frontend if an admin is logged in. 
+## this interferes with the frontend if an admin is logged in.
 ## better split the frontend and backend charSets at some point
 #if (!isset($GLOBALS['strCharSet'])) {
   $GLOBALS['strCharSet'] = $_SESSION['adminlanguage']['charset'];
@@ -165,7 +166,7 @@ class phplist_I18N {
       $page = basename($_GET["page"]);
     else
       $page = "home";
-    
+
     if (trim($text) == "") return "";
     if (strip_tags($text) == "") return $text;
     if (is_file($this->basedir.$this->language.'/'.$page.'.php')) {
@@ -211,7 +212,7 @@ class phplist_I18N {
     if (is_array($lan) && isset($lan[strtoupper($text)])) {
       return $this->formatText($lan[strtoupper($text)]);
     }
-  
+
     # spelling mistake, retry with old spelling
     if ($text == 'over threshold, user marked unconfirmed') {
       return $this->get('over treshold, user marked unconfirmed');

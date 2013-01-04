@@ -14,12 +14,5 @@ $strCharSet = preg_replace('/[^\w-_]+/','',$strCharSet); ## just in case
 <html><head>
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
 <meta http-equiv="pragma" content="no-cache" />
-<link rev="made" href="mailto:info%40phplist.com" />
-<link rel="home" href="http://www.phplist.com" title="phplist homepage" />
-<link rel="copyright" href="http://phplist.com" title="Copyright" />
-<link rel="license" href="http://www.gnu.org/copyleft/gpl.html" title="GNU General Public License" />
-<meta name="Author" content="Michiel Dethmers - http://www.phplist.com" />
-<meta name="Copyright" content="Michiel Dethmers, phpList Ltd - http://phplist.com" />
-<meta name="Powered-By" content="phplist version <?php echo VERSION?>" />
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $strCharSet?>" />
 
